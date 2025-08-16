@@ -1,0 +1,50 @@
+import 'dotenv/config';
+import express from 'express';
+import cors from 'cors';
+import multer from 'multer';
+import { json } from 'express';
+import { authRouter } from './routes/auth.js';
+import { disputesRouter } from './routes/disputes.js';
+import { uploadsRouter } from './routes/uploads.js';
+import { taxRouter } from './routes/tax.js';
+import { cusipRouter } from './routes/cusip.js';
+import { exportRouter } from './routes/export.js';
+import { adminRouter } from './routes/admin.js';
+import { billingRouter } from './routes/billing.js';
+import { deliveryRouter } from './routes/delivery.js';
+import { labelsRouter } from './routes/labels.js';
+import { dashboardRouter } from './routes/dashboard.js';
+import { grantsRouter } from './routes/grants.js';
+import { sovereignRouter } from './routes/sovereign.js';
+import { authenticateRequest } from './middleware/auth.js';
+
+const app = express();
+app.use(cors());
+app.use(json({ limit: '20mb' }));
+
+const upload = multer({ storage: multer.memoryStorage() });
+
+app.get('/health', (_req, res) => res.json({ ok: true }));
+
+app.use('/api/auth', authRouter);
+app.use('/api/billing', billingRouter);
+
+// Protected routes
+app.use(authenticateRequest);
+app.use('/api/disputes', disputesRouter);
+app.use('/api/uploads', upload.any(), uploadsRouter);
+app.use('/api/tax', taxRouter);
+app.use('/api/cusip', cusipRouter);
+app.use('/api/export', exportRouter);
+app.use('/api/admin', adminRouter);
+app.use('/api/delivery', deliveryRouter);
+app.use('/api/delivery/labels', labelsRouter);
+app.use('/api/dashboard', dashboardRouter);
+app.use('/api/grants', grantsRouter);
+app.use('/api/sovereign', sovereignRouter);
+
+const port = process.env.PORT ? Number(process.env.PORT) : 4000;
+app.listen(port, () => {
+  // eslint-disable-next-line no-console
+  console.log(`API listening on :${port}`);
+});
