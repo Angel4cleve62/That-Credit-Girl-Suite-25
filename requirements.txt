@@ -1,0 +1,12 @@
+fastapi>=0.110,<1
+uvicorn[standard]>=0.22,<1
+pydantic>=2.5,<3
+python-dotenv>=1,<2
+requests>=2.31,<3
+google-auth>=2.22,<3
+google-auth-oauthlib>=1.2,<2
+google-api-python-client>=2.100,<3
+google-auth-httplib2>=0.2,<1
+plaid-python>=16,<17
+python-dateutil>=2.8,<3
+pytz>=2024.1,<2026
