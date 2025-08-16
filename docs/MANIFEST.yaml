@@ -1,0 +1,173 @@
+project:
+  name: That Credit Girl Suite
+  slogan: Fix Your Credit. Change Your Life.
+  brain:
+    id: xanthorox-ai-xen
+    description: Cross-module orchestration, continuous learning, multi-document automation, sovereign/legal logic.
+  repo:
+    ci: github-actions
+    ci_status: minimal-always-pass
+
+infrastructure:
+  hosting: vercel
+  domains:
+    root: thatcreditgirl.org
+    subdomains:
+      - name: app
+        purpose: Chatbot + AI tools
+      - name: dashboard
+        purpose: Sovereign Intelligence Dashboard
+      - name: members
+        purpose: Secure portal
+      - name: admin
+        purpose: Admin control panel
+  exports:
+    destinations: [google_drive, dropbox, telegram, email, usb_zip]
+    bundling: [single_kit, per_module_kits, combined_case_binder]
+    versioning: semver
+
+licensing:
+  license_keys: true
+  seat_limits: true
+  kill_switch: true
+  module_toggles: true
+  audit_logs: true
+
+branding:
+  palette: [pink, white]
+  mascot: Cartoon Angie (curly hair)
+  outputs_watermark: true
+  tagline: Fix Your Credit. Change Your Life.
+
+plans_and_access:
+  plans:
+    - id: basic
+      features: [disputes_lite, intake_ocr, exports_basic]
+    - id: pro
+      features: [disputes_full, crm, tax_basic, cusip_basic, exports_all, phone_bot]
+    - id: enterprise
+      features: [all_modules, licensing_controls, admin_audit, sovereign_suite, api_access]
+  roles:
+    - id: disputes
+      toggles: [metro2, cfpb_ftc, escalation, court_ready]
+    - id: tax
+      toggles: [returns, cp2000, p_and_l, fire_export]
+    - id: cusip
+      toggles: [bulk_finder, trustee_discovery, indenture_foia, heatmap]
+    - id: trust
+      toggles: [ucc_suite, certificate_of_trust, bank_kits]
+
+assistants:
+  - name: That Credit Bot
+    capabilities: [disputes, metro2, fcra_fdcpa, cfpb_ftc, fraud_id_theft, score_plans]
+  - name: CUSIP Bot
+    capabilities: [cusip_lookup, ein_lookup, trustee_lookup, edgar_openfigi, indenture_foia]
+  - name: TaxBot
+    capabilities: [forms_1040_1040x_1041_1120_1099_w2, p_and_l_builder, refund_targeting, amended_explainer, cp2000_replies]
+  - name: Trust & Estate Bot
+    capabilities: [ss4_ein, form_56_56f, certificate_of_trust, trustee_notices, banking_packages]
+  - name: Phone/Video Bot
+    capabilities: [call_scripts, recording, transcripts, logging, exports]
+  - name: Grant Bot
+    capabilities: [grant_finder, form_filler, cover_letters, bookkeeping_tieouts]
+  - name: Marketing Bot
+    capabilities: [funnels, upsell_detection, offer_builder, affiliate_portal_content]
+
+sovereignty_suite:
+  name: Eternal Zion Suite
+  components:
+    - status_correction_affidavits
+    - ucc_suite
+    - ministerial_ecclesia_tools
+    - court_readiness
+    - research_knowledge_packs
+    - myth_analyzer
+
+modules:
+  - id: debt_discharge_redemption
+    educational_only: true
+    submodules:
+      - fdcpa_1692g_validation
+      - cease_and_desist
+      - tila_fcba_disputes
+      - respa_rfi_qwr
+      - securitization_research
+      - redemption_packet_builder
+      - treasury_fs_forms_scaffold
+      - ucc_adjunct
+      - bankruptcy_judgment_aids
+      - risk_compliance_guardrails
+  - id: crm_saas
+    features: [client_intake_ocr, metro2_letter_runs, batching_labels, certified_mail_sheets, e_oscar_cfpb, kpis, court_ready_packages]
+  - id: cusip_trust_bonds
+    features: [bulk_cusip_ein, trustee_discovery, indenture_foia_engine, heatmap]
+    deliverables: [xlsx, docx, pdf]
+  - id: tax_platform
+    features: [returns_1040_1040x_1041_1120_1120s_1099_w2, scenario_refund_simulator, p_and_l_auto, notices_cp2000, penalty_abatement, payment_plan_bot, statute_tracker, exports_pdf_xml_csv_fire]
+  - id: banking_trust_setup
+    features: [treasurydirect_pointers, brokerage_trust_forms, bank_kyc_kits, certificate_of_trust, power_of_trustee, ucc1_ucc3_generator, digital_signing, medallion_guidance]
+  - id: file_intake_learning
+    features: [upload_hubs, desktop_scan_agent, cloud_sync_drive_dropbox, advanced_ocr, redaction_highlight, learning_loop]
+  - id: dashboards_portals
+    features: [sovereign_intel_dashboard, growth_tracker, members_portal_roles, admin_panel]
+  - id: training_education
+    features: [quick_start_pdf, how_to_videos, tool_decks, scenario_lab_case, case_law_codes, myth_vs_law_briefs]
+  - id: branding_media
+    features: [branded_outputs, video_library]
+  - id: payments_membership
+    features: [stripe_payments, coupons_trials, upgrades, manual_approval, kyc_terms, affiliate_portal]
+
+deliverables:
+  - dispute_kits: [docx, pdf, zip]
+  - tax_return_kits: [pdf, docx]
+  - cusip_lender_spreadsheet: [xlsx, pdf, docx]
+  - media_training: [slides, videos]
+  - email_delivery: true
+  - usb_ready_zip: true
+
+safety_and_compliance:
+  legality_scanner: true
+  jurisdiction_notes: true
+  sol_tracker: true
+  evidence_builder: true
+  consent_signature_flows: true
+  educational_disclaimer: true
+
+special_features_roadmap:
+  - lightning_mode
+  - multilingual_multivoice_phone_bot
+  - web_scraping_form_posting_with_consent
+  - reverse_audit_simulator
+  - erc_optimizer
+  - roi_dashboards
+  - master_dashboard_wireframe
+  - quick_am_i_missing_anything_checklist
+
+added_modules:
+  - id: grants_loans_academy
+    submodules: [grant_finder, eligibility_matcher, deadline_calendar, narrative_builder, document_packager, compliance_tracker, loan_packaging, underwriting_prep, evidence_binder]
+    steps_grants: [program_fit, collect_docs, build_narrative, budget_justification, assemble_attachments, peer_review_submit, post_award_tracking]
+    steps_loans: [choose_product, prepare_financials, package_funds_collateral_dscr_guarantors, underwriting_red_flags, submit_conditions_close_covenants]
+  - id: cpa_pathway_state_aware
+    submodules: [hours_150_planner, exam_planner_core_discipline, ethics_exam_tracker, experience_log, license_application_wizard, cpe_maintenance]
+    steps: [education_audit, apply_to_sit, exams_core_plus_discipline, ethics_exam, experience, license_application, maintain_cpe]
+  - id: broker_pathways
+    tracks:
+      - securities_registered_rep
+      - mortgage_broker_mlo
+    steps_securities: [pass_sie, firm_sponsorship, series_exams, form_u4_fingerprints_disclosures, state_registration, firm_training_reg_bi_ce]
+    steps_mlo: [nmls_education, safe_test, background_credit_surety_bond, mlo_license_company_link, state_requirements_ce]
+  - id: myth_vs_reality
+    topics:
+      - tda_payments_are_not_supported
+      - fed_window_access_bank_only
+    alternatives:
+      - redeem_security_then_bank_payments
+      - lawful_bond_issuance_path
+
+navigation_map:
+  dashboard_academies: [grants_loans_academy, cpa_pathway_state_aware, broker_pathways]
+  sovereign_intel: [myth_vs_reality]
+  discharge_center: [debt_discharge_redemption]
+  resource_packs: [checklists, templates, timelines, compliance_notes]
+  brain_orchestration: xanthorox-ai-xen
